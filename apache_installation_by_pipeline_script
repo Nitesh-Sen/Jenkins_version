@@ -13,12 +13,12 @@ pipeline {
     }
                   stage('Build') {
                    steps {
-                   sh 'docker build -t niteshsen/pipeline:tagname .'
+                   sh 'docker build -t niteshsen/pipeline:apache2 .'
             }
                 }
                 stage('Docker test') {
                    steps {
-                   sh 'docker run -d -p 8086:80  niteshsen/pipeline:tagname'
+                   sh 'docker run -d -p 8080:80  niteshsen/pipeline:apache2'
                  
             }
                 }
@@ -28,10 +28,11 @@ pipeline {
                     sh 'echo $user'
                     sh 'echo ${user}'
                    sh "docker login -u ${user} -p ${pass}"
-                   sh 'docker push niteshsen/pipeline:tagname'
+                   sh 'docker push niteshsen/pipeline:apache2'
         }
     }
 }
 
+}
 }
 }
