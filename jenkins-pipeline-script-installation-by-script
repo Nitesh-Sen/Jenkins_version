@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+                  stage('verify') {
+                    steps {
+                     git([url: 'https://github.com/Nitesh-Sen/Jenkins_version.git', branch: 'main'])
+                     sh 'chmod 777 nitesh.sh'
+                     sh '/bin/bash nitesh.sh'
+        }
+    }
+                stage('Docker Push') {
+                   steps {
+                   withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    sh 'echo $user'
+                    sh 'echo ${user}'
+                   sh "docker login -u ${user} -p ${pass}"
+                   sh 'docker push niteshsen/pipeline:apache3'
+        }
+    }
+}
+
+}
+}
