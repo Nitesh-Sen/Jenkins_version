@@ -3,7 +3,7 @@ pipeline {
     stages {
                   stage('verify') {
                     steps {
-                     git([url: 'https://github.com/dimple44/docker-repo.git', branch: 'main'])
+                     git([url: 'https://github.com/Nitesh-Sen/Docker.git', branch: 'main'])
                      sh 'ls -lhtr'
                      sh 'pwd'
                      sh 'docker --version'
@@ -13,22 +13,22 @@ pipeline {
     }
                   stage('Build') {
                    steps {
-                   sh 'docker build -t anuwinder/pipeline:tagname .'
+                   sh 'docker build -t nitesh/pipeline:tagname .'
             }
                 }
                 stage('Docker test') {
                    steps {
-                   sh 'docker run -d -p 8085:80  anuwinder/pipeline:tagname'
+                   sh 'docker run -d -p 8085:80  niteshsen/pipeline:tagname'
                  
             }
                 }
                 stage('Docker Push') {
                    steps {
                    withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                    sh 'echo $pass'
-                    sh 'echo ${pass}'
+                    sh 'echo $user'
+                    sh 'echo ${user}'
                    sh "docker login -u ${user} -p ${pass}"
-                   sh 'docker push anuwinder/pipeline:tagname'
+                   sh 'docker push niteshsen/pipeline:tagname'
         }
     }
 }
