@@ -1,4 +1,11 @@
 # Jenkins_Installation
+
+Create a file.
+```
+sudo vim ~/jenkins.sh
+```
+Now add this content in this file and save then exit [wq!]
+
 ```
 #!/bin/bash
 Green='\033[0;92m'
@@ -62,4 +69,12 @@ else
 	echo -e "${Yellow} jenkin enabling Please wait it will take time................... $NC"
 	systemctl enable jenkins
 fi
+```
+Give the execute permissions of this file.
+```
+sudo chmod u+x ~/jenkins.sh
+```
+And lastly execute this file.
+```
+sudo ~/jenkins.sh
 ```
