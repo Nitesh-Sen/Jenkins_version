@@ -1,0 +1,6 @@
+ls -lhtr
+pwd
+aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 4XXXXXXXXX5.dkr.ecr.us-west-1.amazonaws.com
+docker build -t app:apache2 .
+docker tag app:apache2 4XXXXXXXXX5.dkr.ecr.us-west-1.amazonaws.com/app:apache2
+docker push 4XXXXXXXXXX5.dkr.ecr.us-west-1.amazonaws.com/app:apache2
