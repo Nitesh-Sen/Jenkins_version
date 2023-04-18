@@ -76,5 +76,5 @@ sudo chmod u+x ~/jenkins.sh
 ```
 And lastly execute this file.
 ```
-sudo ~/jenkins.sh
+sudo bash ~/jenkins.sh
 ```
