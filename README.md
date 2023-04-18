@@ -63,12 +63,12 @@ else
 		echo -e "${Green} jenkins is started $NC"
 		echo -e " run this command to check the status of jenkins"
 		echo -e "${Green} sudo systemctl status jenkins $NC"
+		echo -e "${Yellow} jenkins enabling Please wait it will take time................... $NC"
+		systemctl enable jenkins
+		echo -e "${Green} jenkins is enabled $NC"
 	else
 		echo -e "${Red} jenkins is not start please check manually $NC"
 	fi
-	echo -e "${Yellow} jenkins enabling Please wait it will take time................... $NC"
-	systemctl enable jenkins
-	echo -e "${Green} jenkins is enabled $NC"
 fi
 ```
 Give the execute permissions of this file.
