@@ -17,7 +17,7 @@ else
         sleep 1
         wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 fi
-echo "${Green} Importing a key file from Jenkins-CI to enable installation from the package ${NC}"
+echo -e "${Green} Importing a key file from Jenkins-CI to enable installation from the package ${NC}"
 sleep 1
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 echo -e "${Green} your system is going to upgrading $NC"
@@ -46,7 +46,7 @@ fi
 systemctl status jenkins &> /tmp/jenkinsinstallation
 if [ $? == 0 ] ; then
         echo -e "${Green} jenkins is already started No need to start $NC"
-	echo "check with this command -> ${Green} sudo systemctl status jenkins $NC"
+	echo -e "${Yellow} check with this command -> $NC ${Green} sudo systemctl status jenkins $NC"
         sleep 1
 else
         echo -e "${Yellow} jenkins is not started. this is going to install and enable please wait it will take the time $NC"
