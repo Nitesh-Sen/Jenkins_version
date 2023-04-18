@@ -56,7 +56,7 @@ if [ $? == 0 ] ; then
 	echo -e "${Yellow} check with this command -> $NC ${Green} sudo systemctl status jenkins $NC"
         sleep 1
 else
-        echo -e "${Yellow} jenkins is not started. this is going to install and enable please wait it will take the time $NC"
+        echo -e "${Yellow} jenkins is not started. this is going to start and enable. Please wait it will take the time $NC"
         sleep 3
         systemctl start jenkins
 	if [ $? == 0 ] ; then
