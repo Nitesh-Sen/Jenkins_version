@@ -66,8 +66,9 @@ else
 	else
 		echo -e "${Red} jenkins is not start please check manually $NC"
 	fi
-	echo -e "${Yellow} jenkin enabling Please wait it will take time................... $NC"
+	echo -e "${Yellow} jenkins enabling Please wait it will take time................... $NC"
 	systemctl enable jenkins
+	echo -e "${Green} jenkins is enabled $NC"
 fi
 ```
 Give the execute permissions of this file.
