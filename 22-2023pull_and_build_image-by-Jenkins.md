@@ -38,3 +38,6 @@
 >    ![](https://github.com/Nitesh-Sen/Jenkins_version/blob/ed96dc14cfcb30b95d6b4a772ed0b68afb98ed2d/Images/Screenshot%20from%202023-04-22%2000-56-25.png)
 > 
 > Lastly click on Save. Then build your job.
+>  
+>  ![](https://github.com/Nitesh-Sen/Jenkins_version/blob/12edafd4ddbda317fb01d979fe26a929661a57a3/Images/Image01-03-10_2023-04-22.png)
+>  ![](https://github.com/Nitesh-Sen/Jenkins_version/blob/12edafd4ddbda317fb01d979fe26a929661a57a3/Images/Image01-05-02_2023-04-22.png)
