@@ -1,0 +1,21 @@
+job('<job-name>') {    
+scm {        
+git('<YOUR_GIT_REPO_IN_WHICH_Dockerfile>')    
+}
+triggers {
+  githubPush()
+}   
+steps {        
+
+        dockerBuildAndPublish {
+            repositoryName('<DOCKER_HUB/REPO_NAME>')
+            tag('<TAG_WHICH_WILL_SHOW_IN_Docker-Hub>')
+            registryCredentials('<Docker-Hub-credential_ID_if-you-already_save_in_jenkins>')
+            forcePull(false)
+            createFingerprints(false)
+            skipDecorate()
+            forceTag(false)
+        }
+
+  }
+}
