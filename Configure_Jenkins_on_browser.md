@@ -1,5 +1,6 @@
 # After Installing Jenkins on Amazon Linux 2 instance. Configuring it on browser: 
- **Step-1:** Firstly you need the create base. Installing  the Jenkins, Docker and Git. [Go to This file and installing all of these with few clicks.](https://github.com/Nitesh-Sen/Jenkins_version/blob/75fa430866d66164d0538c8910c041b7cbcae695/README.md)
+ **Step-1: Firstly you need the create base. Installing  the Jenkins, Docker and Git. [Go to This file and installing all of these with few clicks.](https://github.com/Nitesh-Sen/Jenkins_version/blob/75fa430866d66164d0538c8910c041b7cbcae695/README.md)**
+ 
  **Step-2: Now you have to open inbound Port 8080 from your instance. Then Open the browser and hit the public IP along with the 8080 port.**
 ```
 http://<Your_Instance_Public_ip>:8080
