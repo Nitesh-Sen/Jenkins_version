@@ -1,3 +1,4 @@
+
 # Jenkins_Installation
 
 Create a file.
@@ -107,6 +108,14 @@ if [ $? == 0 ] ; then
 else
         echo -e "${Yellow} java-11-amazon-corretto is not available going to install $NC"
 	dnf install java-11-amazon-corretto -y
+	if [ $? == 0 ]
+                then
+                        echo -e "${Green} Package java-11-amazon-corretto is successfully installed $NC "
+                else
+                        echo -e "${Red} Package java-11-amazon-corretto installation failed. $NC"
+
+                fi
+                sleep 1
 fi
 echo ""
 sleep 2
@@ -116,18 +125,17 @@ for a in jenkins git docker
         do
         which $a &>> /tmp/jenkinsinstallation
         if [ $? != 0 ] ; then
-                echo -e "${Yellow} $a packages is not available"     
+                echo -e "${Yellow} $a packages is not available ${Green}it's packages is going to install $NC"     
                 sleep 2
-                echo -e "   ${Green} packages is going to install $NC"
-                echo -e "    Please wait, it will take some time ............................."
                 sudo yum install $a -y
                 if [ $? == 0 ]
                 then
-                        echo -e "${Green}    Package $a is successfully installed $NC "
+                        echo -e "${Green} Package $a is successfully installed $NC "
                 else
-                        echo -e "$Red Package $a installation failed. $NC"
+                        echo -e "${Red} Package $a installation failed. $NC"
 
                 fi
+		sleep 1
         else
 
                 echo -e "${Green} $a package is already available no need to install $NC"
@@ -142,11 +150,9 @@ for b in jenkins docker
         systemctl status $b &>> /tmp/jenkinsinstallation
 	if [ $? == 0 ] ; then
 		echo -e "${Green} $b is already started No need to start $NC"
-		echo -e "${Yellow} check with this command -> $NC ${Green} sudo systemctl status $b $NC"
-		sleep 1
 	else
 		echo -e "${Yellow} $b is not started. this is going to start and enable. Please wait it will take the time $NC"
-		sleep 3
+		sleep 2
 		systemctl start $b
 		if [ $? == 0 ] ; then
 			echo -e "${Green} $b is started $NC"
@@ -176,14 +182,13 @@ else
 	echo -e "${Green} docker restarting $NC"
 	sudo service docker restart 
         echo ""
-	echo -e "${Green} jenkins restarting $NC"
+	echo -e "${Green} jenkins restarting. Please wait, It will take the time $NC"
 	sudo service jenkins restart
 
 fi
 echo ""
 sleep 2
 ```
-
 Give the execute permissions of this file.
 ```
 sudo chmod u+x ~/jenkins.sh
