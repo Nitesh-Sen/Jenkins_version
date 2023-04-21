@@ -125,12 +125,12 @@ for a in jenkins git docker
         do
         which $a &>> /tmp/jenkinsinstallation
         if [ $? != 0 ] ; then
-                echo -e "${Yellow} $a packages is not available ${Green}it's packages is going to install $NC"     
+                echo -e "${Yellow} Package $a is not available. ${Green}it's going to install $NC"     
                 sleep 2
                 sudo yum install $a -y
                 if [ $? == 0 ]
                 then
-                        echo -e "${Green} Package $a is successfully installed $NC "
+                        echo -e "${Green} Package $a is successfully installed. $NC "
                 else
                         echo -e "${Red} Package $a installation failed. $NC"
 
@@ -138,7 +138,7 @@ for a in jenkins git docker
 		sleep 1
         else
 
-                echo -e "${Green} $a package is already available no need to install $NC"
+                echo -e "${Green} Package $a is already available no need to install. $NC"
         fi
         echo ""
         sleep 2
@@ -153,12 +153,14 @@ for b in jenkins docker
 	else
 		echo -e "${Yellow} $b is not started. this is going to start and enable. Please wait it will take the time $NC"
 		sleep 2
+		echo ""
 		systemctl start $b
 		if [ $? == 0 ] ; then
 			echo -e "${Green} $b is started $NC"
-                	echo -e "Run this command to check the status of jenkins ${Green} sudo systemctl status $b $NC"
+			echo ""
                 	echo -e "${Yellow} $b enabling Please wait it will take time................... $NC"
                 	systemctl enable $b
+			echo ""
                 	echo -e "${Green} $b is enabled $NC"
 		else
 			echo -e "${Red} $b is not start please check manually $NC"
@@ -168,11 +170,14 @@ for b in jenkins docker
         sleep 2
 
 done
+echo ""
+echo ""
+echo ""
 
 ############# jenkins add  in docker group
 id jenkins | grep docker &> /tmp/jenkinsinstallation
 if [ $? == 0 ] ; then
-        echo -e "${Green} Jenkins is already members of Docker group $NC"
+        echo -e "${Green} Jenkins is already members of Docker group. $NC"
 else
         echo -e "${Yellow} Jenkins is not members of Docker group going to add $NC"
         sudo usermod -aG docker jenkins
