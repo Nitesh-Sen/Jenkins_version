@@ -74,7 +74,7 @@ else
 fi
 ```
 
-- if you want to Jenkins with Docker and Git with all set with structure then copy this content
+- If you want to install Jenkins with Docker and Git with add the jenkins in docker group. Then copy this content.
 ```
 #!/bin/bash
 Green='\033[0;92m'
