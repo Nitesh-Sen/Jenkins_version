@@ -1,6 +1,9 @@
 
 # Jenkins Installation in Amazon Linux 2
 
+###### NOTE: Open Inbound Port 8080, 80 to All Traffic 
+> *If you will run Jenkins in t2.micro. Then Create swap memory for run Jenkins easily or smoothly in your server with this [document](https://repost.aws/knowledge-center/ec2-memory-swap-file).*
+
 Create a file.
 ```
 sudo vim ~/jenkins.sh
