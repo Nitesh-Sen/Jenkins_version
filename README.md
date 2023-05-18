@@ -1,5 +1,5 @@
 
-# Jenkins_Installation in Amazon Linux 2
+# Jenkins Installation in Amazon Linux 2
 
 Create a file.
 ```
