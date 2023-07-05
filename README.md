@@ -9,7 +9,7 @@ Create a file.
 sudo vim ~/jenkins.sh
 ```
 Now add this content in this file and save then exit [wq!]
-- If you want to do only installing of Jenkins then copy this [**OR**](--If-you-want-to-install-Jenkins-with-Docker-and-Git-with-add-the-jenkins-in-docker-group.-Then-copy-this-content)
+- If you want to do only installing of Jenkins then copy this [**OR**](If-you-want-to-install-Jenkins-with-Docker-and-Git-with-add-the-jenkins-in-docker-group.-Then-copy-this-content)
 
 ```
 #!/bin/bash
